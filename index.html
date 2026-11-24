@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>College Openings Reading List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="lib/summary-reader.css">
+<style>
+* { box-sizing: border-box } body { margin: 0 }
+.notebox { max-width: 46rem; margin: 0 auto; padding: 1rem 16px 3rem; font-family: var(--serif); font-size: 16px; line-height: 1.6 }
+.notebox h2 { font-family: var(--display); font-size: 1.15rem; margin-top: 1.6rem }
+.notebox blockquote { margin: 0 0 1rem; padding: .6rem .9rem; background: var(--warn-soft); color: var(--fg); border-left: 3px solid var(--warn); font-family: var(--sans); font-size: 13.5px }
+.notebox .linkout { font-family: var(--sans); font-size: 14px; padding: .6rem .9rem; border: 1px solid var(--line); background: var(--panel); border-radius: 6px }
+.notebox table { border-collapse: collapse; font-size: 14px } .notebox td, .notebox th { border: 1px solid var(--line); padding: .25rem .5rem }
+
+/* Layout: one column of lists (Start here, All, By question, By role) under a slim header;
+   a paper opens as an info band over the summary-beside-PDF reader, which fills the rest of the screen.
+   Identity: Ceejipedia (Fraunces / Source Serif 4 / IBM Plex), teal accent; amber only for trust notices. */
+:root {
+  --bg: #f5f7f6; --panel: #ffffff; --fg: #17211f; --muted: #5b6a67; --line: #d5dedb;
+  --accent: #0f5f5a; --accent-soft: #dcecea; --warn: #8a4b08; --warn-soft: #f6e8d4;
+  --pin: #0f5f5a; --drop: #8b8f8e;
+  --display: "Fraunces", Georgia, serif; --serif: "Source Serif 4", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111716; --panel: #182120; --fg: #e3ebe9; --muted: #9aa9a6; --line: #2c3936;
+  --accent: #6cc4bb; --accent-soft: #1d3532; --warn: #e6b26f; --warn-soft: #3a2c19; --pin: #6cc4bb; --drop: #6f7876; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111716; --panel: #182120; --fg: #e3ebe9; --muted: #9aa9a6; --line: #2c3936;
+  --accent: #6cc4bb; --accent-soft: #1d3532; --warn: #e6b26f; --warn-soft: #3a2c19; --pin: #6cc4bb; --drop: #6f7876; color-scheme: dark }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sr { --sr-bg: #121817; --sr-panel: #1a2220; --sr-fg: #e4ebe9; --sr-muted: #9aa8a5; --sr-line: #2e3a37; --sr-accent: #6cc4bb; --sr-accent-soft: #1f3633; --sr-warn: #e6b26f; --sr-warn-soft: #3a2c19 } }
+:root[data-theme="dark"] .sr { --sr-bg: #121817; --sr-panel: #1a2220; --sr-fg: #e4ebe9; --sr-muted: #9aa8a5; --sr-line: #2e3a37; --sr-accent: #6cc4bb; --sr-accent-soft: #1f3633; --sr-warn: #e6b26f; --sr-warn-soft: #3a2c19 }
+:root[data-theme="light"] .sr { --sr-bg: #f6f7f5; --sr-panel: #e9edeb; --sr-fg: #1b2624; --sr-muted: #5a6865; --sr-line: #d3dbd8; --sr-accent: #0f5f5a; --sr-accent-soft: #d6e8e5; --sr-warn: #8a4b08; --sr-warn-soft: #f4e5cf }
+
+html, body { height: 100% }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.5 }
+button { font: inherit; color: inherit }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 }
+
+header.top { border-bottom: 1px solid var(--line); background: var(--panel) }
+header.top .wrap { padding-block: 18px 0; display: grid; gap: 6px }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap }
+h1 { font-family: var(--display); font-weight: 650; font-size: clamp(24px, 4vw, 32px); line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -.01em }
+.lens { margin: 0; color: var(--muted); font-family: var(--serif); font-size: 16px; max-width: 66ch }
+.stat { font-family: var(--mono); font-size: 12px; color: var(--muted) }
+nav.tabs { display: flex; gap: 2px; flex-wrap: wrap; margin-top: 8px }
+nav.tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 10px; cursor: pointer; color: var(--muted); font-weight: 500 }
+nav.tabs button[aria-current="page"] { color: var(--fg); border-bottom-color: var(--accent) }
+.searchrow { display: flex; gap: 8px; align-items: center; padding-block: 14px 0 }
+#q { flex: 1; min-width: 0; font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg) }
+
+main .wrap { padding-block: 20px 48px; display: grid; gap: 22px }
+h2 { font-family: var(--display); font-weight: 500; font-size: 21px; margin: 0; text-wrap: balance }
+.sub { color: var(--muted); margin: 2px 0 0; font-family: var(--serif); max-width: 66ch }
+.gap { border-left: 3px solid var(--accent); padding: 8px 12px; background: var(--accent-soft); font-family: var(--serif); max-width: 72ch }
+.gap b { font-family: var(--sans); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; display: block; color: var(--accent) }
+
+ol.list, ul.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line) }
+.row { display: grid; grid-template-columns: 2.2em 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: start }
+.row.unranked { grid-template-columns: 1fr auto }
+.rank { font-family: var(--display); font-size: 22px; color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums }
+.row .body { min-width: 0; display: grid; gap: 3px }
+.ttl { background: none; border: 0; padding: 0; text-align: left; cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: 16px; color: var(--fg) }
+.ttl:hover { color: var(--accent); text-decoration: underline }
+.full { font-family: var(--serif); font-style: italic; color: var(--fg) }
+.venue { font-size: 13px; color: var(--muted) }
+.why { font-family: var(--serif); margin: 2px 0 0; max-width: 70ch }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px }
+.chip { font-size: 11.5px; font-family: var(--mono); padding: 1px 7px; border-radius: 20px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap }
+.chip.role { border-color: var(--accent); color: var(--accent) }
+.chip.nopdf { border-style: dashed }
+.row .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px }
+.mine { font-size: 12px; font-family: var(--mono); color: var(--pin) }
+.mine.drop { color: var(--drop) }
+.row.dropped .body { opacity: .55 }
+.empty { color: var(--muted); font-family: var(--serif) }
+.qhead { display: grid; gap: 4px }
+.qhead .qid { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .05em; text-transform: uppercase }
+.legend { font-size: 13px; color: var(--muted) }
+.legend b { color: var(--fg); font-weight: 600 }
+.note-trust { font-size: 12.5px; color: var(--warn); background: var(--warn-soft); padding: 6px 10px; border-radius: 4px; max-width: 72ch }
+
+/* paper view */
+#paper { display: flex; flex-direction: column; height: 100%; }
+.pinfo { background: var(--panel); border-bottom: 1px solid var(--line) }
+.pinfo .wrap { max-width: none; padding-block: 10px; display: grid; gap: 6px }
+.pinfo .line1 { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
+.back { background: none; border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; cursor: pointer; font-size: 13px }
+.pinfo h2 { font-size: 19px }
+.pinfo details summary { cursor: pointer; color: var(--muted); font-size: 13px }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 6px 18px; margin: 6px 0 0; font-size: 13px }
+.facts dt { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted) }
+.facts dd { margin: 0 }
+.status { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; font-size: 13px }
+.status button { border: 1px solid var(--line); background: var(--bg); border-radius: 20px; padding: 2px 10px; cursor: pointer }
+.status button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--panel) }
+.status textarea { flex: 1 1 260px; min-width: 0; font: inherit; font-size: 13px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); resize: vertical; min-height: 30px }
+.status .msg { color: var(--muted); font-size: 12px }
+#readerHost { flex: 1; min-height: 0 }
+.nopdfbox { padding: 24px 0; display: grid; gap: 10px; font-family: var(--serif) }
+a { color: var(--accent) }
+@media (max-width: 520px) { .row { grid-template-columns: 1.8em 1fr } .row .side { grid-column: 2; flex-direction: row; align-items: center } .row.unranked .side { grid-column: 1 } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important } }
+</style>
+
+<div id="listView">
+  <header class="top">
+    <div class="wrap">
+      <div class="brand"><h1>College Openings Reading List</h1><span class="stat" id="stat"></span></div>
+      <p class="lens" id="lens"></p>
+      <div class="searchrow"><label for="q" class="stat">Search</label><input id="q" type="search" placeholder="Titles, summaries, designs… e.g. synthetic control, patents, Texas" autocomplete="off"></div>
+      <nav class="tabs" aria-label="Views">
+        <button data-v="start">Start here</button><button data-v="all">All papers</button><button data-v="questions">By question</button><button data-v="roles">By role</button>
+      </nav>
+    </div>
+  </header>
+  <main><div class="wrap" id="content"><p class="empty">Loading the list…</p></div></main>
+</div>
+
+<div id="paper" hidden>
+  <div class="pinfo"><div class="wrap" id="pinfo"></div></div>
+  <div id="readerHost"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="lib/summary-reader.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = "lib/pdf.worker.min.js";
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const $ = s => document.querySelector(s);
+let SITE = null, SEARCH = {}, KNOWN = {}, CAN_WRITE = false, DB = null, view = "start";
+
+const LEVELS = ["Not read", "Skimmed", "Read", "Know well"];
+
+/* ---------- routing (hash: start | all | questions | roles | p-<slug>) ---------- */
+function navigate(h) { if (location.hash.slice(1) !== h) location.hash = h; else render(); }
+window.addEventListener("hashchange", render);
+document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => navigate(b.dataset.v)));
+
+/* ---------- list rendering ---------- */
+function mineTag(p) {
+  const k = KNOWN[p.slug]; if (!k) return "";
+  const bits = [];
+  if (k.start === "pin") bits.push("pinned");
+  if (k.start === "drop") bits.push("dropped");
+  if (k.level) bits.push(LEVELS[k.level].toLowerCase());
+  return bits.length ? `<span class="mine ${k.start === "drop" ? "drop" : ""}">${esc(bits.join(" · "))}</span>` : "";
+}
+function rowHTML(p, rank) {
+  const qs = p.qs.map(q => SITE.questions.find(x => x.id === q)?.short).filter(Boolean);
+  const dropped = KNOWN[p.slug]?.start === "drop";
+  return `<li class="row ${rank ? "" : "unranked"} ${dropped ? "dropped" : ""}">
+    ${rank ? `<span class="rank">${rank}</span>` : ""}
+    <div class="body">
+      <button class="ttl" data-open="${esc(p.slug)}">${esc(p.t)}</button>
+      <span class="full">${esc(p.full)}</span>
+      <span class="venue">${esc(p.venue)}</span>
+      <p class="why">${esc(p.why)}</p>
+      <div class="chips"><span class="chip role">${esc(p.role)}</span>${qs.map(q => `<span class="chip">${esc(q)}</span>`).join("")}<span class="chip">${esc(p.inst)}</span><span class="chip">${esc(p.facts.where)}</span>${p.pdf ? '<span class="chip">PDF beside summary</span>' : ""}${p.note ? "" : '<span class="chip nopdf">no summary yet</span>'}</div>
+    </div>
+    <div class="side">${mineTag(p)}</div>
+  </li>`;
+}
+function matches(p, q) { if (!q) return true; const t = SEARCH[p.slug] || ""; return q.split(/\s+/).every(w => t.includes(w)); }
+function ordered(list) {
+  // CJ's pins first, drops last; otherwise curated order.
+  const w = p => KNOWN[p.slug]?.start === "pin" ? 0 : KNOWN[p.slug]?.start === "drop" ? 2 : 1;
+  return list.slice().sort((a, b) => w(a) - w(b));
+}
+function renderList() {
+  const q = $("#q").value.trim().toLowerCase();
+  const P = SITE.papers.filter(p => matches(p, q));
+  const c = $("#content"); let h = "";
+  if (q) h += `<p class="sub">${P.length} of ${SITE.papers.length} papers match “${esc(q)}”. Search covers titles, notes and summaries.</p>`;
+  if (view === "start") {
+    const S = P.filter(p => p.start).sort((a, b) => a.start - b.start);
+    const pins = P.filter(p => !p.start && KNOWN[p.slug]?.start === "pin");
+    h += `<section><h2>Start here</h2><p class="sub">Eight papers, ordered for a project on community and technical college openings and local firms, industry mix and innovation. Read 1–4 for the closest results, 5–8 for designs and measures.</p></section>
+      <div class="gap"><b>Gap in the literature</b>${esc(SITE.gap)}</div>
+      <ol class="list">${S.map(p => rowHTML(p, p.start)).join("") || '<li class="empty">No Start-here paper matches.</li>'}</ol>`;
+    if (pins.length) h += `<section><h2>Also pinned by you</h2></section><ul class="list">${pins.map(p => rowHTML(p)).join("")}</ul>`;
+  } else if (view === "all") {
+    h += `<section><h2>All papers</h2><p class="sub">${SITE.stats.papers} papers: ${SITE.stats.pdf} with a hosted PDF and ${SITE.stats.notes} with a summary. Your pins (saved in this browser) come first and drops last.</p></section>
+      <ul class="list">${ordered(P).map(p => rowHTML(p)).join("")}</ul>`;
+  } else if (view === "questions") {
+    h += `<section><h2>By question</h2><p class="sub">Each paper is listed under every question it speaks to.</p></section>`;
+    for (const qq of SITE.questions) {
+      const L = ordered(P.filter(p => p.qs.includes(qq.id)));
+      h += `<section class="qhead"><span class="qid">${esc(qq.id)} · ${esc(qq.short)}</span><h2>${esc(qq.text)}</h2></section><ul class="list">${L.map(p => rowHTML(p)).join("") || '<li class="empty">None match.</li>'}</ul>`;
+    }
+  } else if (view === "roles") {
+    h += `<section><h2>By role</h2><p class="legend">${Object.entries(SITE.roles).map(([k, v]) => `<b>${esc(k)}</b>: ${esc(v)}`).join(" · ")}</p></section>`;
+    for (const r of Object.keys(SITE.roles)) {
+      const L = ordered(P.filter(p => p.role === r));
+      if (L.length) h += `<section><h2>${esc(r[0].toUpperCase() + r.slice(1))}</h2></section><ul class="list">${L.map(p => rowHTML(p)).join("")}</ul>`;
+    }
+  }
+  h += `<p class="note-trust">Summaries are model-written from each paper's PDF (2026-11-24) and not checked by a person. Every quoted number was matched against the PDF text, and one headline claim per paper was checked by a separate grader. Where a PDF is shown beside the summary, summary-to-page links are the most likely source, not checked: in a graded sample, exhibit links hit the right caption 20 of 20 times, and text links landed on the claim 30 of 60 times, nearby 23 times and wrong 7 times.</p>`;
+  c.innerHTML = h;
+  c.querySelectorAll("[data-open]").forEach(b => b.addEventListener("click", () => navigate("p-" + b.dataset.open)));
+  document.querySelectorAll("nav.tabs button").forEach(b => b.toggleAttribute("aria-current", b.dataset.v === view) || b.dataset.v === view && b.setAttribute("aria-current", "page"));
+}
+$("#q").addEventListener("input", () => renderList());
+
+const LS_KEY = "college-openings-reading-list:known";
+/* ---------- paper view ---------- */
+let mounted = null;
+function statusHTML(p) {
+  const k = KNOWN[p.slug] || {};
+  if (!CAN_WRITE) return k.level || k.start ? `<div class="status">${mineTag(p)}</div>` : "";
+  return `<div class="status" id="status">
+    <button data-start="pin" aria-pressed="${k.start === "pin"}">Pin</button><button data-start="drop" aria-pressed="${k.start === "drop"}">Drop</button>
+    <span class="stat">·</span>${LEVELS.map((l, i) => `<button data-level="${i}" aria-pressed="${(k.level || 0) === i}">${l}</button>`).join("")}
+    <textarea id="mynote" placeholder="Your note on this paper" aria-label="Your note">${esc(k.note || "")}</textarea><span class="msg" id="smsg"></span></div>`;
+}
+function renderPaper(slug) {
+  const p = SITE.papers.find(x => x.slug === slug);
+  if (!p) { navigate("start"); return; }
+  $("#listView").hidden = true; $("#paper").hidden = false;
+  const f = p.facts;
+  $("#pinfo").innerHTML = `
+    <div class="line1"><button class="back" id="back">← List</button><h2>${esc(p.t)}</h2><span class="venue">${esc(p.venue)}</span>${p.start ? `<span class="chip role">Start here #${p.start}</span>` : ""}<span class="chip role">${esc(p.role)}</span></div>
+    <details ${innerWidth > 850 ? "open" : ""}><summary>Why it's on the list, key facts${CAN_WRITE ? ", your status" : ""}</summary>
+      <p class="why">${esc(p.why)}</p>
+      <dl class="facts"><div><dt>Design</dt><dd>${esc(f.design)}</dd></div><div><dt>Data</dt><dd>${esc(f.data)}</dd></div><div><dt>Period</dt><dd>${esc(f.period)}</dd></div><div><dt>Where</dt><dd>${esc(f.where)}</dd></div><div><dt>Institution</dt><dd>${esc(p.inst)}</dd></div></dl>
+      ${statusHTML(p)}
+    </details>`;
+  $("#back").addEventListener("click", () => navigate(view));
+  wireStatus(p);
+  const host = $("#readerHost"); host.innerHTML = ""; mounted = slug;
+  if (p.pdf && p.read) {
+    mountSummaryReader(host, { pdf: "pdfs/" + slug + ".pdf", read: "data/read/" + slug + ".json", title: "", original: p.src && /^https:/.test(p.src) ? p.src : undefined });
+  } else if (p.note) {
+    host.innerHTML = `<div class="notebox"><p class="linkout">${p.src ? `Read the paper: <a href="${esc(p.src)}" target="_blank" rel="noopener">open copy</a> (working-paper or author version). ` : "No open copy found; use library access. "}Page cites in the summary, such as (p. 12), refer to that PDF.</p><div id="notebody">Loading the summary…</div></div>`;
+    fetch("data/notes/" + slug + ".md").then(r => r.ok ? r.text() : Promise.reject()).then(md => {
+      if (mounted !== slug) return;
+      md = md.replace(/^---\n[\s\S]*?\n---\n/, "");
+      $("#notebody").innerHTML = window.marked ? marked.parse(md) : `<pre>${esc(md)}</pre>`;
+    }).catch(() => { $("#notebody").textContent = "The summary could not load. Reload to try again."; });
+  } else {
+    host.innerHTML = `<div class="wrap nopdfbox"><p><b>No summary for this paper yet.</b> It is on the list from the citation search, and its citation was checked on 2026-11-24.</p><p class="full">${esc(p.full)}</p><p>${esc(p.venue)}</p>${p.src ? `<p>Open copy: <a href="${esc(p.src)}" target="_blank" rel="noopener">${esc(p.src)}</a> (working-paper version)</p>` : "<p>No open copy found; use library access.</p>"}</div>`;
+  }
+  scrollTo(0, 0);
+}
+function wireStatus(p) {
+  const box = $("#status"); if (!box) return;
+  const save = async patch => {
+    const next = Object.assign({}, KNOWN[p.slug] || {}, patch);
+    KNOWN[p.slug] = next;
+    try { localStorage.setItem(LS_KEY, JSON.stringify(KNOWN)); $("#smsg").textContent = "Saved in this browser"; }
+    catch (e) { $("#smsg").textContent = "Couldn't save: " + (e && e.code || "error"); }
+  };
+  box.querySelectorAll("[data-start]").forEach(b => b.addEventListener("click", () => {
+    const cur = KNOWN[p.slug]?.start; const v = cur === b.dataset.start ? null : b.dataset.start;
+    box.querySelectorAll("[data-start]").forEach(x => x.setAttribute("aria-pressed", x.dataset.start === v)); save({ start: v });
+  }));
+  box.querySelectorAll("[data-level]").forEach(b => b.addEventListener("click", () => {
+    box.querySelectorAll("[data-level]").forEach(x => x.setAttribute("aria-pressed", x === b)); save({ level: +b.dataset.level });
+  }));
+  let t = null; $("#mynote").addEventListener("input", e => { clearTimeout(t); $("#smsg").textContent = "…"; t = setTimeout(() => save({ note: e.target.value.slice(0, 4000) }), 800); });
+}
+
+function render() {
+  const h = location.hash.slice(1);
+  if (h.startsWith("p-") && SITE) { if (mounted !== h.slice(2) || $("#paper").hidden) renderPaper(h.slice(2)); return; }
+  mounted = null; $("#paper").hidden = true; $("#listView").hidden = false; $("#readerHost").innerHTML = "";
+  view = ["start", "all", "questions", "roles"].includes(h) ? h : "start";
+  if (SITE) renderList();
+}
+
+/* ---------- boot ---------- */
+(async () => {
+  try {
+    [SITE, SEARCH] = await Promise.all([fetch("data/site.json").then(r => r.json()), fetch("data/search.json").then(r => r.json()).catch(() => ({}))]);
+  } catch (e) { $("#content").innerHTML = '<p class="empty">The paper list could not load. Reload the page to try again.</p>'; return; }
+  $("#lens").textContent = SITE.lens;
+  $("#stat").textContent = `${SITE.stats.papers} papers · ${SITE.stats.notes} summaries` + (SITE.stats.pdf ? ` · ${SITE.stats.pdf} PDFs` : "");
+  render();
+  // Pins, levels and notes live in this browser only (localStorage); the page renders fine without them.
+  try { KNOWN = JSON.parse(localStorage.getItem(LS_KEY) || "{}") || {}; } catch (e) { KNOWN = {}; }
+  CAN_WRITE = true; DB = null;
+  if ($("#paper").hidden) renderList(); else if (mounted) { const s = mounted; mounted = null; renderPaper(s); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,795 @@
+{
+ "title": "College Openings Reading List",
+ "lens": "For CJ's project on community and technical college openings and their effects on local firms, industry mix and innovation.",
+ "questions": [
+  {
+   "id": "q1",
+   "short": "Firms and industry mix",
+   "text": "Does an opening shift local establishments, sector employment or wages toward the fields the college teaches?"
+  },
+  {
+   "id": "q2",
+   "short": "Innovation",
+   "text": "Does an opening raise local patenting or firm R&D, and is that plausible for teaching-focused 2-year colleges?"
+  },
+  {
+   "id": "q3",
+   "short": "Design",
+   "text": "How do you build a counterfactual for a sited institution: runner-up sites, similar-criteria siting, synthetic control, distance rings, or funding shocks?"
+  },
+  {
+   "id": "q4",
+   "short": "Mechanisms",
+   "text": "Which channel is it: skill supply, knowledge transfer, or local demand from the campus itself?"
+  }
+ ],
+ "roles": {
+  "benchmark": "Closest analog result to compare against",
+  "design": "Template for identification",
+  "measurement": "How to build an outcome or exposure",
+  "background": "Context, surveys and policy"
+ },
+ "gap": "No paper found on modern US community college openings with firm, establishment or patent outcomes (search of 2026-11-23). Bleemer & Quincy (2026) is the closest, for 1910s-1920s junior colleges.",
+ "papers": [
+  {
+   "slug": "BleemerQuincy_JuniorCollegesLocalDevelopment_2026",
+   "t": "Bleemer & Quincy (2026)",
+   "full": "Junior Colleges and Local Development",
+   "venue": "Working paper, June 2026",
+   "start": 1,
+   "role": "benchmark",
+   "qs": [
+    "q1",
+    "q2",
+    "q3"
+   ],
+   "inst": "2-year",
+   "why": "The only paper found on 2-year (junior college) openings with manufacturing, sector-mix and patent outcomes. Patenting is a null, which is itself the benchmark.",
+   "facts": {
+    "design": "Staggered DiD on ~300 openings, same-state comparison places",
+    "data": "Census microdata 1900-1940, Census of Manufactures and Agriculture",
+    "period": "1900-1940",
+    "where": "US"
+   },
+   "src": "https://zacharybleemer.com/wp-content/uploads/Working-Papers/BleemerQuincy_JC_Jan2026.pdf",
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks how local human capital affects regional productivity and spatial structural transformation. It studies the first wave of American two-year \"junior\" colleges, using the timing and location of every opening between 1900 and 1950 (p. 2). It makes three claims: (i) openings raised local college-going and moved men into skilled farm and clerical work; (ii) openings raised county farm value per acre and far",
+   "tags": [
+    "agricultural-productivity",
+    "community-colleges",
+    "economic-history",
+    "human-capital",
+    "jel-i23",
+    "junior-colleges",
+    "place-based-policy",
+    "staggered-difference-in-differences",
+    "structural-transformation",
+    "technology-adoption"
+   ]
+  },
+  {
+   "slug": "LehnertDellBackesGellnerBettinger_PostsecondaryInstitutionsLocalEconomies_2024",
+   "t": "Lehnert, Dell, Backes-Gellner, & Bettinger (2024)",
+   "full": "The Effect of Postsecondary Educational Institutions on Local Economies: A Bird's-Eye View",
+   "venue": "IZA DP 17059 / NBER WP 32679, 2024",
+   "start": 2,
+   "role": "benchmark",
+   "qs": [
+    "q1",
+    "q3"
+   ],
+   "inst": "branch campus",
+   "why": "Modern US branch-campus openings, with employment in the sectors aligned to each campus's programs. This is the program-to-industry alignment outcome the project needs.",
+   "facts": {
+    "design": "DiD, heterogeneity-robust DiD and IV",
+    "data": "Daytime satellite imagery; employment by sector",
+    "period": "2000s-2010s",
+    "where": "Tennessee, Texas"
+   },
+   "src": "https://docs.iza.org/dp17059.pdf",
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether opening a postsecondary branch campus raises local economic activity, a question the authors say lacks evidence because data at a fine enough geography and long enough horizon are scarce (pp. 4–5). They study branch campus openings after 1984 in Tennessee (69 openings) and Texas (65 openings) (Table 1, p. 16). The contributions are fourfold. They hand-collect opening dates and locations of bran",
+   "tags": [
+    "branch-campuses",
+    "community-colleges",
+    "difference-in-differences",
+    "instrumental-variables",
+    "jel-i23",
+    "jel-r12",
+    "local-economic-growth",
+    "satellite-imagery",
+    "staggered-adoption",
+    "tennessee-texas"
+   ]
+  },
+  {
+   "slug": "Andrews_HigherEducationLocalInvention_2023",
+   "t": "Andrews (2023)",
+   "full": "How Do Institutions of Higher Education Affect Local Invention? Evidence from the Establishment of US Colleges",
+   "venue": "AEJ: Economic Policy 15(2): 1-41, 2023 (hosted: 2018 draft)",
+   "start": 3,
+   "role": "design",
+   "qs": [
+    "q2",
+    "q3"
+   ],
+   "inst": "college",
+   "why": "The runner-up-site design for college establishment, with patents as the outcome. The hosted PDF is the 2018 draft, whose numbers differ from the published version.",
+   "facts": {
+    "design": "DiD against runner-up sites from site-selection histories",
+    "data": "Historical patents, college yearbooks",
+    "period": "1839-1954 establishments",
+    "where": "US"
+   },
+   "src": "https://conference.nber.org/conf_papers/f109198.pdf",
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether establishing a college causes local invention, whether colleges are necessary for it, and through what channel. The author argues colleges are not randomly sited and builds a cleaner counterfactual than earlier work. He uses narrative histories of 432 colleges to find finalist \"runner-up\" counties, then keeps only \"high quality\" cases where the site choice approximates random assignment (p. 7-8",
+   "tags": [
+    "difference-in-differences",
+    "economic-history",
+    "jel-i23",
+    "jel-o31",
+    "migration",
+    "natural-experiment",
+    "patents",
+    "place-based-policy",
+    "runner-up-design",
+    "universities-and-invention"
+   ]
+  },
+  {
+   "slug": "SchlegelPfisterHarhoffBackesGellner_InnovationEffectsUAS_2022",
+   "t": "Schlegel, Pfister, Harhoff, & Backes-Gellner (2022)",
+   "full": "Innovation Effects of Universities of Applied Sciences: An Assessment of Regional Heterogeneity",
+   "venue": "Journal of Technology Transfer 47: 63-118, 2022",
+   "start": 4,
+   "role": "benchmark",
+   "qs": [
+    "q2",
+    "q4"
+   ],
+   "inst": "applied/technical",
+   "why": "Swiss universities of applied sciences are the closest European analog to technical colleges. Patent effects are split by labor-market size, density and high-tech intensity.",
+   "facts": {
+    "design": "DiD on municipalities within 25 km of a new UAS campus",
+    "data": "EPO patent filings",
+    "period": "1990-2008",
+    "where": "Switzerland"
+   },
+   "src": "https://link.springer.com/article/10.1007/s10961-020-09839-w",
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "Earlier studies of new higher education institutions report average patent increases of 7 to 32 percent, mostly for academic universities (p. 2). This paper asks whether the innovation effect of Swiss universities of applied sciences (UASs), bachelor-granting three-year colleges that teach and conduct applied research, varies with a region's economic preconditions (p. 1). It tests three agglomeration-based preconditi",
+   "tags": [
+    "agglomeration-economies",
+    "difference-in-differences",
+    "higher-education-expansion",
+    "jel-i23",
+    "jel-o31",
+    "labor-market-size",
+    "patents",
+    "regional-heterogeneity",
+    "switzerland",
+    "universities-of-applied-sciences"
+   ]
+  },
+  {
+   "slug": "LehnertPfisterBackesGellner_RDPersonnelUAS_2020",
+   "t": "Lehnert, Pfister, & Backes-Gellner (2020)",
+   "full": "Employment of R&D Personnel after an Educational Supply Shock: Effects of the Introduction of Universities of Applied Sciences in Switzerland",
+   "venue": "Labour Economics 66, 2020",
+   "start": 5,
+   "role": "benchmark",
+   "qs": [
+    "q2",
+    "q4"
+   ],
+   "inst": "applied/technical",
+   "why": "Firm R&D staffing after UAS openings, a direct firm outcome for an applied-college shock. No hosted PDF; an open working-paper copy is linked.",
+   "facts": {
+    "design": "DiD around UAS introduction",
+    "data": "Swiss firm and employment data",
+    "period": "1990s-2000s",
+    "where": "Switzerland"
+   },
+   "src": "http://repec.business.uzh.ch/RePEc/iso/leadinghouse/0141_lhwpaper.pdf",
+   "note": false,
+   "pdf": false,
+   "read": false,
+   "model": false,
+   "abstract": "",
+   "tags": []
+  },
+  {
+   "slug": "Hausman_UniversityInnovationLocalGrowth_2022",
+   "t": "Hausman (2022)",
+   "full": "University Innovation and Local Economic Growth",
+   "venue": "Review of Economics and Statistics 104(4): 718-735, 2022",
+   "start": 6,
+   "role": "measurement",
+   "qs": [
+    "q1",
+    "q2"
+   ],
+   "inst": "research university",
+   "why": "Matches industries to a university's technical strengths. It is a template for measuring how closely a college's programs fit local industries.",
+   "facts": {
+    "design": "DiD around the 1980 Bayh-Dole Act by industry-university closeness",
+    "data": "Establishment-level LBD, university patents",
+    "period": "1976-2001",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether knowledge from U.S. universities drives local industry agglomeration (abstract, p. 1). It uses the 1980 Bayh-Dole Act, and the 1984 Trademark Clarification Act, as a national shock to the spread of university ideas to industry, and interacts it with a county-industry innovation index measuring how technologically related each industry is to the nearby university's pre-1980 patents (pp. 1–2). Th",
+   "tags": [
+    "bayh-dole",
+    "firm-entry",
+    "industry-agglomeration",
+    "innovation-index",
+    "jel-o31",
+    "jel-r11",
+    "longitudinal-business-database",
+    "place-based-policy",
+    "technology-transfer",
+    "university-knowledge-spillovers"
+   ]
+  },
+  {
+   "slug": "HowardWeinsteinYang_UniversitiesLocalResilience_2024",
+   "t": "Howard, Weinstein, & Yang (2024)",
+   "full": "Do Universities Improve Local Economic Resilience?",
+   "venue": "Review of Economics and Statistics 106(4): 1129-1145, 2024",
+   "start": 7,
+   "role": "design",
+   "qs": [
+    "q3"
+   ],
+   "inst": "regional university",
+   "why": "Similar site-selection criteria give the counterfactual (normal schools vs. insane asylums). This kind of design could carry over to 2-year college siting.",
+   "facts": {
+    "design": "Normal-school vs asylum counties, shift-share shocks",
+    "data": "County employment",
+    "period": "1830-1930 siting; modern outcomes",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether a regional (non-research-intensive) public university makes a local economy more resilient to adverse shocks, chiefly manufacturing decline (p. 1). It contributes in two ways (p. 2). First, it studies resilience, which the university-growth literature had not examined. Second, it proposes a new identification strategy: states placed normal schools (teacher training) and insane asylums in 1830–1",
+   "tags": [
+    "county-fixed-effects",
+    "higher-education",
+    "historical-natural-experiment",
+    "local-resilience",
+    "manufacturing-decline",
+    "mediation-analysis",
+    "normal-schools",
+    "randomization-inference",
+    "regional-universities",
+    "rust-belt"
+   ]
+  },
+  {
+   "slug": "Miller_LocalCommunityCollegeOpenings_2025",
+   "t": "Miller (2025)",
+   "full": "Small Distances that Matter: Effects of Local Community College Openings on Enrollment and Degree Completion",
+   "venue": "Working paper, June 2025",
+   "start": 8,
+   "role": "design",
+   "qs": [
+    "q3"
+   ],
+   "inst": "2-year",
+   "why": "Modern Texas community-college openings, using distance rings and an imputation event study. The outcomes are enrollment only, but the design transfers directly.",
+   "facts": {
+    "design": "Event study, 20-minute vs 20-40-minute rings, BJS imputation",
+    "data": "Texas ERC administrative records",
+    "period": "1997-2012 openings",
+    "where": "Texas"
+   },
+   "src": "https://loismiller.github.io/Miller_Lois_CC_openings.pdf",
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks how much the geographic proximity of a community college changes whether and where nearby students enroll, and whether they finish degrees. Miller (2025) uses five community college branch-campus openings in Texas between 1997 and 2012 (Table 1, p. 19). She compares high school graduates within 20 minutes driving time of a new campus with graduates 20–40 minutes away in the same commuting zone, before ",
+   "tags": [
+    "college-openings",
+    "college-proximity",
+    "community-colleges",
+    "difference-in-differences",
+    "education-deserts",
+    "event-study",
+    "imputation-estimator",
+    "jel-i23",
+    "texas"
+   ]
+  },
+  {
+   "slug": "AndrewsSmith_LandGrantDirectionOfScience_2025",
+   "t": "Andrews & Smith (2025)",
+   "full": "Do Local Conditions Determine the Direction of Science? Evidence from U.S. Land Grant Colleges",
+   "venue": "Explorations in Economic History 97: 101669, 2025",
+   "role": "benchmark",
+   "qs": [
+    "q4"
+   ],
+   "inst": "land-grant",
+   "why": "Shows whether colleges direct their research toward local crops. This is the analog of community colleges tailoring programs to local industry.",
+   "facts": {
+    "design": "Publication mix vs local crop mix",
+    "data": "Agricultural research publications",
+    "period": "1860s-2000s",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether local conditions determine the direction of science, using agricultural research at U.S. land grant colleges (p. 1). It defines \"agricultural unrepresentativeness\" as the chi-square distance between the crop distribution in the college's county and that in the rest of the state before the college location was decided, and tests whether colleges in unrepresentative counties research crops unrepr",
+   "tags": [
+    "agricultural-productivity",
+    "agricultural-research",
+    "direction-of-science",
+    "economic-history",
+    "knowledge-spillovers",
+    "land-grant-colleges",
+    "place-based-policy",
+    "runner-up-counties",
+    "site-selection-natural-experiment"
+   ]
+  },
+  {
+   "slug": "PfisterKoomenHarhoffBackesGellner_AppliedResearchInstitutions_2021",
+   "t": "Pfister, Koomen, Harhoff, & Backes-Gellner (2021)",
+   "full": "Regional Innovation Effects of Applied Research Institutions",
+   "venue": "Research Policy 50(4): 104197, 2021",
+   "role": "benchmark",
+   "qs": [
+    "q2"
+   ],
+   "inst": "applied/technical",
+   "why": "The Swiss UAS patent paper that the 2022 heterogeneity paper builds on. No hosted PDF; an open working-paper copy is linked.",
+   "facts": {
+    "design": "DiD around UAS campus openings",
+    "data": "Patent filings",
+    "period": "1990s-2000s",
+    "where": "Switzerland"
+   },
+   "src": "http://repec.business.uzh.ch/RePEc/iso/leadinghouse/0117_lhwpaper.pdf",
+   "note": false,
+   "pdf": false,
+   "read": false,
+   "model": false,
+   "abstract": "",
+   "tags": []
+  },
+  {
+   "slug": "ToivanenVaananen_EducationAndInvention_2016",
+   "t": "Toivanen & Väänänen (2016)",
+   "full": "Education and Invention",
+   "venue": "Review of Economics and Statistics 98(2): 382-396, 2016",
+   "role": "benchmark",
+   "qs": [
+    "q2",
+    "q4"
+   ],
+   "inst": "technical university",
+   "why": "Finnish technical-university openings serve as an instrument for engineering education, with patents as the outcome. It is the skill-supply channel to innovation. No hosted PDF.",
+   "facts": {
+    "design": "IV: distance to new technical universities",
+    "data": "Finnish linked inventor data",
+    "period": "1960s-1990s",
+    "where": "Finland"
+   },
+   "note": false,
+   "pdf": false,
+   "read": false,
+   "model": false,
+   "abstract": "",
+   "tags": []
+  },
+  {
+   "slug": "YangSiLiu_UniversityExpansionFirmInnovation_2026",
+   "t": "Yang, Si, & Liu (2026)",
+   "full": "Local University Expansion and Firm Innovation: Evidence from Skilled Labor Supply Shocks and Innovation Efficiency",
+   "venue": "Economic Modelling 155: 107446, 2026",
+   "role": "benchmark",
+   "qs": [
+    "q2"
+   ],
+   "inst": "university + junior college",
+   "why": "Firm-level patents after Chinese university openings, with junior and vocational colleges as a comparison where effects are small or null. No hosted PDF.",
+   "facts": {
+    "design": "Staggered DiD across 362 cities",
+    "data": "2,546 listed firms' patents",
+    "period": "2008-2022",
+    "where": "China"
+   },
+   "note": false,
+   "pdf": false,
+   "read": false,
+   "model": false,
+   "abstract": "",
+   "tags": []
+  },
+  {
+   "slug": "BonanderJakobssonPodestaSvensson_UniversitiesRegionalGrowth_2016",
+   "t": "Bonander, Jakobsson, Podestà, & Svensson (2016)",
+   "full": "Universities as Engines for Regional Growth? Using the Synthetic Control Method to Analyze the Effects of Research Universities",
+   "venue": "Regional Science and Urban Economics 60: 198-207, 2016",
+   "role": "design",
+   "qs": [
+    "q3"
+   ],
+   "inst": "research university",
+   "why": "Synthetic control for upgrades of Swedish colleges to university status, with small and imprecise effects. It shows how limited inference is with few treated units.",
+   "facts": {
+    "design": "Synthetic control on 3 regions",
+    "data": "Regional GDP, employment, patents",
+    "period": "1990s-2010s",
+    "where": "Sweden"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether granting research-university status to existing institutions raises regional output and entrepreneurship. The treatment is the 1999 Swedish university reform, which upgraded three university colleges (Karlstad, Örebro, Växjö) to universities with the right to award PhDs and with higher block research funding (pp. 1–3). The authors apply the synthetic control method (SCM) to 21 Swedish NUTS3 reg",
+   "tags": [
+    "higher-education-reform",
+    "jel-i23",
+    "jel-r11",
+    "knowledge-spillovers",
+    "patents",
+    "placebo-inference",
+    "regional-growth",
+    "research-universities",
+    "sweden",
+    "synthetic-control"
+   ]
+  },
+  {
+   "slug": "KantorWhalley_KnowledgeSpilloversResearchUniversities_2014",
+   "t": "Kantor & Whalley (2014)",
+   "full": "Knowledge Spillovers from Research Universities: Evidence from Endowment Value Shocks",
+   "venue": "Review of Economics and Statistics 96(1): 171-188, 2014",
+   "role": "design",
+   "qs": [
+    "q3",
+    "q4"
+   ],
+   "inst": "research university",
+   "why": "An endowment-shock IV for university spending, which separates spending (demand) from spillovers. It offers a template for funding-shock designs at community colleges.",
+   "facts": {
+    "design": "IV: stock-market shocks x lagged endowment",
+    "data": "County labor income, employment",
+    "period": "1981-1996",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper estimates the causal effect of research university activity on wages paid by local firms outside higher education (p. 1–2). University activity is endogenous: productive local firms may attract university partnerships and demand its graduates, and spillovers can run in both directions (p. 2). The authors build an instrument from the fact that universities spend a roughly fixed share of endowment market valu",
+   "tags": [
+    "agglomeration",
+    "endowment-shocks",
+    "instrumental-variables",
+    "knowledge-spillovers",
+    "labor-market-pooling",
+    "local-labor-income",
+    "long-differences",
+    "research-universities",
+    "shift-share-instrument"
+   ]
+  },
+  {
+   "slug": "Lee_LocalImpactUCMerced_2018",
+   "t": "Lee (2018)",
+   "full": "The Local Economic Impact of a Large Research University: Evidence from UC Merced",
+   "venue": "Economic Inquiry 57(1): 316-332 (online 2018)",
+   "role": "design",
+   "qs": [
+    "q1",
+    "q3",
+    "q4"
+   ],
+   "inst": "research university",
+   "why": "A synthetic control for a single opening. Its gains are mainly in nontraded services, which points to the local-demand channel.",
+   "facts": {
+    "design": "Synthetic control, permutation inference",
+    "data": "County employment by industry",
+    "period": "2005-2014",
+    "where": "California"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "Lee (2018) asks whether opening a large research university raises local employment in the short run. The setting is the 2005 opening of UC Merced, which the paper describes as the first American research university built in the 21st century (p. 2). Two problems motivate the design: campus locations are not random, because universities may follow innovative workers and firms, and most large research universities were",
+   "tags": [
+    "jel-j24",
+    "jel-o18",
+    "jel-r11",
+    "local-labor-demand",
+    "nontraded-sector",
+    "permutation-inference",
+    "place-based-policy",
+    "synthetic-control",
+    "uc-merced",
+    "university-opening"
+   ]
+  },
+  {
+   "slug": "Liu_SpilloversLandGrantProgram_2015",
+   "t": "Liu (2015)",
+   "full": "Spillovers from Universities: Evidence from the Land-Grant Program",
+   "venue": "Journal of Urban Economics 87: 25-41, 2015",
+   "role": "design",
+   "qs": [
+    "q1",
+    "q3"
+   ],
+   "inst": "land-grant",
+   "why": "Land-grant counties compared with matched synthetic-control counties, tracking long-run population and manufacturing share.",
+   "facts": {
+    "design": "Event study vs synthetic-control counties",
+    "data": "County census",
+    "period": "1840-1940",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper estimates short- and long-run effects of universities on geographic clustering of economic activity, labor market composition and local productivity, and interprets a productivity effect in a non-education sector as evidence of local spillovers (abstract, p. 1). The treatment is the designation of land-grant universities after the Morrill Act of 1862, treated as a natural experiment once confounders are con",
+   "tags": [
+    "agglomeration-economies",
+    "economic-history",
+    "event-study",
+    "jel-j24",
+    "jel-r00",
+    "land-grant-universities",
+    "manufacturing-productivity",
+    "population-density",
+    "synthetic-control",
+    "university-spillovers"
+   ]
+  },
+  {
+   "slug": "SchweigerStepanovZacchia_RussianScienceCities_2022",
+   "t": "Schweiger, Stepanov, & Zacchia (2022)",
+   "full": "The Long-Run Effects of R&D Place-Based Policies: Evidence from Russian Science Cities",
+   "venue": "AEJ: Economic Policy 14(3): 322-351, 2022",
+   "role": "design",
+   "qs": [
+    "q1",
+    "q3"
+   ],
+   "inst": "science city",
+   "why": "Matches localities on conditions at the time of siting, with firm and human-capital outcomes decades later.",
+   "facts": {
+    "design": "Matching on pre-siting characteristics",
+    "data": "Census, firm data",
+    "period": "Soviet siting; 2000s-2010s outcomes",
+    "where": "Russia"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper asks whether a historical place-based R&D policy, the Soviet creation of 95 \"Science Cities\" for strategic, mostly military research, still shows up in present-day Russian municipalities decades after state support collapsed (pp. 1–3). Outcomes are human capital, patenting, R&D/ICT employment and wages, and proxies for local economic activity. The contributions are: a hand-built database of Science Cities a",
+   "tags": [
+    "agglomeration",
+    "jel-o33",
+    "jel-r58",
+    "knowledge-spillovers",
+    "long-run-persistence",
+    "matching-estimator",
+    "patents",
+    "place-based-policy",
+    "science-cities",
+    "spatial-equilibrium"
+   ]
+  },
+  {
+   "slug": "BabbarKantorWhalleyZeng_PublicRDAutomationSpaceRace_2026",
+   "t": "Babbar, Kantor, Whalley, & Zeng (2026)",
+   "full": "Public R&D and the Automation of Manufacturing: Evidence from the Space Race",
+   "venue": "NBER WP 35966, October 2026",
+   "role": "background",
+   "qs": [
+    "q1",
+    "q2"
+   ],
+   "inst": "public R&D",
+   "why": "Whether public R&D shifts the industry mix toward automation, with patent-text measures of automation.",
+   "facts": {
+    "design": "Triple differences on Space Race exposure",
+    "data": "Census of Manufactures, patents",
+    "period": "1947-1992",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "Babbar, Kantor, Whalley, & Zeng (2026) ask whether mission-oriented public R&D pushes technological change toward automation, and whether this reaches local manufacturing labor markets. The setting is NASA's Space Race after Sputnik. The paper makes two contributions. First, it combines a full-text patent measure of automation versus augmentation (built following Autor, Chin, Salomons, and Seegmiller 2024) with a gov",
+   "tags": [
+    "automation",
+    "directed-technical-change",
+    "jel-o33",
+    "labor-share",
+    "nasa",
+    "patent-text",
+    "public-rd",
+    "skill-composition",
+    "space-race",
+    "triple-difference"
+   ]
+  },
+  {
+   "slug": "BaronKantorWhalley_ExtendingReachResearchUniversities_2018",
+   "t": "Baron, Kantor, & Whalley (2018)",
+   "full": "Extending the Reach of Research Universities: A Proposal for Productivity Growth in Lagging Communities",
+   "venue": "Hamilton Project Policy Proposal 2018-11",
+   "role": "background",
+   "qs": [
+    "q4"
+   ],
+   "inst": "research university",
+   "why": "A policy proposal for extending university benefits to lagging places, with an evidence review.",
+   "facts": {
+    "design": "Policy proposal and evidence review",
+    "data": "Secondary",
+    "period": "-",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "Baron, Kantor, & Whalley (2018) ask whether establishing research universities in lagging communities is a sound place-based policy. They review the evidence on how universities affect local economies and conclude, in the abstract, that \"instead of establishing a new research university, lagging communities should focus on transferring productivity-enhancing knowledge to their local employers from existing research u",
+   "tags": [
+    "human-capital",
+    "jel-o38",
+    "jel-r11",
+    "knowledge-spillovers",
+    "lagging-communities",
+    "manufacturing-extension",
+    "place-based-policy",
+    "policy-proposal",
+    "research-universities",
+    "university-openings"
+   ]
+  },
+  {
+   "slug": "BaronKantorWhalley_NextSiliconValley_2026",
+   "t": "Baron, Kantor, & Whalley (2026)",
+   "full": "Can Government Support for Innovation Create the Next Silicon Valley?",
+   "venue": "Journal of Economic Perspectives 40(4): 31-52, 2026",
+   "role": "background",
+   "qs": [
+    "q2",
+    "q4"
+   ],
+   "inst": "public R&D",
+   "why": "A survey of what public R&D can and cannot do for a regional economy. Use it as the map of this literature.",
+   "facts": {
+    "design": "Survey essay",
+    "data": "Secondary",
+    "period": "-",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "Baron, Kantor, & Whalley (2026) ask what public research funding can and cannot do for a regional economy, motivated by programs such as the NSF Regional Innovation Engines under the CHIPS and Science Act of 2022 (p. 1). Their answer is that public R&D is \"one input into a knowledge hub and not necessarily the binding one\" (p. 1). The contribution is a conceptual frame of five considerations (research is an input, kn",
+   "tags": [
+    "agglomeration",
+    "complementarities",
+    "knowledge-hubs",
+    "local-multipliers",
+    "place-based-policy",
+    "public-rd",
+    "space-race",
+    "survey-essay",
+    "uc-merced",
+    "university-spillovers"
+   ]
+  },
+  {
+   "slug": "CalvertJumpScavette_FlagshipCollegeTownsRecessions_2026",
+   "t": "Calvert Jump & Scavette (2026)",
+   "full": "Do Research Universities Recession-Proof Their Regions? Evidence from State Flagship College Towns",
+   "venue": "Philadelphia Fed WP 26-08, 2026",
+   "role": "background",
+   "qs": [
+    "q4"
+   ],
+   "inst": "flagship university",
+   "why": "Flagship college towns in the 2008 and 2020 recessions, a resilience angle on the demand channel.",
+   "facts": {
+    "design": "Synthetic DiD",
+    "data": "County employment",
+    "period": "1997-2022",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "Calvert Jump & Scavette (2026) ask whether counties that host a state flagship university are more resilient to recessions, measured as a lower local unemployment response than comparable counties without R1 or R2 research universities. They study the dot-com (2001), great (2008) and Covid-19 (2020) recessions separately, each over a three-year post window. The contribution is to move the university-and-local-economy",
+   "tags": [
+    "college-towns",
+    "covid-19",
+    "flagship-universities",
+    "jel-r11",
+    "jel-r23",
+    "non-tradables",
+    "recessions",
+    "regional-resilience",
+    "synthetic-control",
+    "synthetic-did"
+   ]
+  },
+  {
+   "slug": "KantorWhalley_MoonshotPublicRDGrowth_2023",
+   "t": "Kantor & Whalley (2023)",
+   "full": "Moonshot: Public R&D and Growth",
+   "venue": "NBER WP 31471, rev. March 2024",
+   "role": "background",
+   "qs": [
+    "q2",
+    "q4"
+   ],
+   "inst": "public R&D",
+   "why": "Space Race R&D and local manufacturing, a large public-R&D shock with firm outcomes.",
+   "facts": {
+    "design": "DiD by pre-period technology fit",
+    "data": "Census of Manufactures",
+    "period": "1947-1992",
+    "where": "US"
+   },
+   "note": true,
+   "pdf": true,
+   "read": true,
+   "model": true,
+   "abstract": "The paper estimates the long-term effect of public R&D on manufacturing growth using NASA contractor spending during the Cold War Space Race (p. 2–3). Because NASA could harvest industries that were already strong in space-relevant technology, spending is endogenous. The authors instead define \"space capability\" from Soviet space technology, using declassified CIA National Intelligence Estimates matched by text simil",
+   "tags": [
+    "fiscal-multiplier",
+    "industrial-policy",
+    "inventor-migration",
+    "jel-h54",
+    "jel-o32",
+    "public-rd",
+    "space-race",
+    "technology-spillovers",
+    "text-similarity",
+    "triple-difference"
+   ]
+  }
+ ],
+ "stats": {
+  "papers": 22,
+  "pdf": 18,
+  "notes": 18
+ },
+ "public": true
+}
